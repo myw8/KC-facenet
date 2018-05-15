@@ -1,0 +1,52 @@
+arguments: /home/yiqi.liu-4/PycharmProjects/facenet/src/align/align_dataset_mtcnn.py ./data/lfw/raw ./data/lfw/lfw_mtcnnpy_160 --image_size 160 --margin 32 --random_order --gpu_memory_fraction 0.25
+--------------------
+tensorflow version: 1.3.0
+--------------------
+git hash: fe78f661234fcd7fdfe8d136b6e7711afe154a43
+--------------------
+diff --git a/src/align/align_dataset_mtcnn.py b/src/align/align_dataset_mtcnn.py
+index 7d5e735..f36ab44 100644
+--- a/src/align/align_dataset_mtcnn.py
++++ b/src/align/align_dataset_mtcnn.py
+@@ -31,8 +31,8 @@ import os
+ import argparse
+ import tensorflow as tf
+ import numpy as np
+-import facenet
+-import align.detect_face
++from src import facenet, align
++
+ import random
+ from time import sleep
+ 
+diff --git a/test/batch_norm_test.py b/test/batch_norm_test.py
+index 48cfd55..3454c4c 100644
+--- a/test/batch_norm_test.py
++++ b/test/batch_norm_test.py
+@@ -47,7 +47,6 @@ class BatchNormTest(unittest.TestCase):
+         sess.run(init)
+   
+         with sess.as_default():
+-        
+             #generate a constant variable to pass into batch norm
+             y = np.random.normal(0, 1, size=(50,20,20,10))
+             
+@@ -63,4 +62,3 @@ class BatchNormTest(unittest.TestCase):
+ 
+ if __name__ == "__main__":
+     unittest.main()
+-    
+\ No newline at end of file
+diff --git a/test/train_test.py b/test/train_test.py
+index 9edbd0f..fcf1663 100644
+--- a/test/train_test.py
++++ b/test/train_test.py
+@@ -26,7 +26,7 @@ import numpy as np
+ import cv2
+ import os
+ import shutil
+-import download_and_extract  # @UnresolvedImport
++from src import download_and_extract  # @UnresolvedImport
+ import subprocess
+ 
+ def memory_usage_psutil():

@@ -1,0 +1,2 @@
+model_checkpoint_path: "net_p_srgan.ckpt"
+all_model_checkpoint_paths: "net_p_srgan.ckpt"
