@@ -10,26 +10,6 @@ We run this script under [TensorFlow](https://www.tensorflow.org) 1.2 and the se
 
 TensorFlow Implementation of ["Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network"](https://arxiv.org/abs/1609.04802)
 
-<a href="http://tensorlayer.readthedocs.io">
-<div align="center">
-	<img src="img/model.jpeg" width="80%" height="10%"/>
-</div>
-</a>
-
-
-### Results
-
-<a href="http://tensorlayer.readthedocs.io">
-<div align="center">
-	<img src="img/SRGAN_Result2.png" width="80%" height="50%"/>
-</div>
-</a>
-
-<a href="http://tensorlayer.readthedocs.io">
-<div align="center">
-	<img src="img/SRGAN_Result3.png" width="80%" height="50%"/>
-</div>
-</a>
 
 ### Prepare Data and Pre-trained VGG
 
